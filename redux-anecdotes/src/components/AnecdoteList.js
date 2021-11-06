@@ -14,10 +14,7 @@ const AnecdoteList = () => {
     console.log('vote', id)
     const changedAnecdote = anecdotes.find(a => a.id===id)
     dispatch(voteAnecdote({ ...changedAnecdote, votes: changedAnecdote.votes+1 }))
-    dispatch(updateNotification(`You voted '${ anecdotes.find(a=>a.id===id).content }'`))
-    setTimeout(() => {
-      dispatch(removeNotification())
-    }, 5000);
+    dispatch(updateNotification(`You voted '${ changedAnecdote.content }'`, 5))
   }
 
   return (
