@@ -14,7 +14,7 @@ const App = () => {
     anecdoteService
       .getAll()
       .then(a => dispatch(initAnecdotes(a)))
-  })
+  }, [dispatch])
 
   return (
     <div>
