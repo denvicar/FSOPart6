@@ -34,6 +34,11 @@
       "votes": 0,
       "content": "New note",
       "id": "B7O8ssE"
+    },
+    {
+      "votes": 0,
+      "content": "New note with thunk",
+      "id": "SiquzVN"
     }
   ]
 }
