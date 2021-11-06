@@ -1,4 +1,4 @@
-const initialMessage = 'Here you\'ll see notifications about your actions'
+const initialMessage = null
 
 const notificationReducer = ( state = initialMessage, action) => {
   switch(action.type) {
