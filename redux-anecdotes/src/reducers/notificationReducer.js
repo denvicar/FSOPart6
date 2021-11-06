@@ -1,4 +1,5 @@
 const initialMessage = null
+let timeout
 
 const notificationReducer = ( state = initialMessage, action) => {
   switch(action.type) {
@@ -10,15 +11,16 @@ const notificationReducer = ( state = initialMessage, action) => {
   }
 }
 
-export const updateNotification = (msg, timeout) => {
+export const updateNotification = (msg, delay) => {
   return async dispatch => {
+    if (timeout) clearTimeout(timeout)
     dispatch({
       type: 'SET_MESSAGE',
       message: msg
     })
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       dispatch(removeNotification())
-    }, timeout*1000);
+    }, delay*1000);
   }
 }
 
